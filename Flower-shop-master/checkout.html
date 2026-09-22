@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Happy Petals - Secure Checkout & Shopping Basket">
+    <title>Secure Checkout & Shopping Basket | Happy Petals Boutique</title>
+
+    <!-- Bootstrap 3.3.7 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link href="css/flowershop.css" rel="stylesheet" type="text/css"/>
+
+    <!-- html2pdf for Invoice -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Top Utility Header -->
+    <div class="top-header-bar">
+        <div class="container">
+            <div class="top-menu-row">
+                <div class="top-menu-links">
+                    <span><i class="fa fa-phone" style="color:var(--primary-color)"></i> Hotline: <strong>800-123-1234</strong></span>
+                    <a href="delivery.html"><i class="fa fa-truck"></i> Free Delivery on Orders over ₹4800</a>
+                    <a href="testimonials.html"><i class="fa fa-star" style="color:#f1b44c"></i> 4.9/5 Rating</a>
+                </div>
+
+                <div style="display:flex; align-items:center; gap:16px;">
+                    <div class="top-auth-container" style="display:inline-flex; align-items:center; gap:10px;">
+                        <a href="registration.html"><i class="fa fa-user-plus"></i> Register</a>
+                        <span style="color:#d5d0cb">|</span>
+                        <a href="login.html"><i class="fa fa-sign-in"></i> Sign In</a>
+                    </div>
+
+                    <form class="form-search-header" role="search">
+                        <input type="text" id="exampleInputsearch" placeholder="Search..." aria-label="Search">
+                        <button type="submit" id="exampleInputgo" aria-label="Submit Search">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+
+                    <a href="checkout.html" class="cart-header-btn" title="View Cart">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        <span>Cart</span>
+                        <span class="cart-badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <i class="fa fa-envira" style="color:var(--primary-color)"></i> Happy Petals <span class="navbar-brand-petal">Boutique</span>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="special.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Catalog <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-custom">
+                            <li><a href="special.html"><i class="fa fa-magic"></i> Today's Specials</a></li>
+                            <li><a href="special.html?cat=roses"><i class="fa fa-heart"></i> Luxury Roses</a></li>
+                            <li><a href="special.html?cat=bouquets"><i class="fa fa-gift"></i> Hand-tied Bouquets</a></li>
+                            <li><a href="special.html?cat=plants"><i class="fa fa-leaf"></i> Plants & Succulents</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="special.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Occasions <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-custom">
+                            <li><a href="special.html?occasion=anniversary">Anniversary</a></li>
+                            <li><a href="special.html?occasion=birthday">Birthday Celebrations</a></li>
+                            <li><a href="special.html?occasion=romance">Love & Romance</a></li>
+                            <li><a href="special.html?occasion=congratulations">Congratulations</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="testimonials.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li class="current-page-item"><a href="checkout.html"><i class="fa fa-shopping-bag"></i> Checkout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container checkout-container">
+        <!-- Sub-Nav -->
+        <div class="sub-nav">
+            <h3><a href="checkout.html">Shopping Basket & Checkout</a></h3>
+            <ol class="breadcrumb breadcrumb-custom">
+                <li><a href="index.html">Home</a></li>
+                <li class="active current-item">Checkout</li>
+            </ol>
+        </div>
+
+        <div class="row" id="checkoutMainRow">
+            <!-- Left Column: Cart Items -->
+            <div class="col-md-7">
+                <div class="checkout-card">
+                    <h3><i class="fa fa-shopping-basket" style="color:var(--primary-color)"></i> Your Selected Items (<span id="cartCountHeader">0</span>)</h3>
+
+                    <div id="cartEmptyMessage" style="display:none; text-align:center; padding:40px 10px;">
+                        <span class="glyphicon glyphicon-shopping-cart" style="font-size:48px; color:var(--primary-color); opacity:0.4; margin-bottom:15px; display:block;"></span>
+                        <h4 style="font-weight:700;">Your shopping basket is empty</h4>
+                        <p style="color:var(--text-muted); margin-bottom:20px;">Explore our artisan bouquets and seasonal specials.</p>
+                        <a href="special.html" class="btn btn-primary-gradient">Browse Today's Specials</a>
+                    </div>
+
+                    <div id="cartTableWrapper" style="overflow-x:auto;">
+                        <table class="cart-table" id="cartTable">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartTableBody">
+                                <!-- Dynamically Rendered by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Optional Quick Add Item (Preserved for flexibility) -->
+                    <div style="margin-top:20px; border-top:1px dashed var(--border-subtle); padding-top:18px;">
+                        <button class="btn btn-link" type="button" id="toggleManualAddBtn" style="padding:0; font-weight:600; color:var(--primary-color);">
+                            <i class="fa fa-plus-circle"></i> Add a custom floral request or special gift card
+                        </button>
+                        <div id="manualAddSection" style="display:none; margin-top:12px; background:#faf8f5; padding:15px; border-radius:var(--radius-sm);">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <input id="itemName" class="form-control input-sm" placeholder="e.g. Personalized Greeting Card" />
+                                </div>
+                                <div class="col-sm-3">
+                                    <input id="itemPrice" type="number" min="0" step="1" value="10.00" class="form-control input-sm" placeholder="Price" />
+                                </div>
+                                <div class="col-sm-2">
+                                    <input id="itemQty" type="number" min="1" value="1" class="form-control input-sm" />
+                                </div>
+                                <div class="col-sm-2">
+                                    <button id="addItemBtn" type="button" class="btn btn-sm btn-default" style="width:100%;">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Shipping Details & Order Summary -->
+            <div class="col-md-5">
+                <div class="checkout-card">
+                    <h3><i class="fa fa-truck" style="color:var(--primary-color)"></i> Delivery Details</h3>
+                    <form id="checkoutForm">
+                        <div class="form-group">
+                            <label for="customerName">Recipient Full Name *</label>
+                            <input id="customerName" class="form-control" placeholder="e.g. Eleanor Vance" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customerEmail">Email Address (for order updates) *</label>
+                            <input id="customerEmail" type="email" class="form-control" placeholder="you@example.com" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customerPhone">Recipient Phone Number</label>
+                            <input id="customerPhone" type="tel" class="form-control" placeholder="(555) 000-0000" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customerAddress">Delivery Street Address *</label>
+                            <input id="customerAddress" class="form-control" placeholder="123 Blossom Lane, Apt 4B" required />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-7">
+                                <div class="form-group">
+                                    <label for="customerCity">City *</label>
+                                    <input id="customerCity" class="form-control" placeholder="San Jose" required />
+                                </div>
+                            </div>
+                            <div class="col-xs-5">
+                                <div class="form-group">
+                                    <label for="customerZip">Zip Code *</label>
+                                    <input id="customerZip" class="form-control" placeholder="95123" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="deliveryDate">Preferred Delivery Date</label>
+                                    <input id="deliveryDate" type="date" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="deliveryTime">Preferred Delivery Time</label>
+                                    <input id="deliveryTime" type="time" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="deliveryInstructions">Delivery Boy Instructions</label>
+                            <textarea id="deliveryInstructions" class="form-control" rows="2" placeholder="e.g. Leave on the porch, Do not ring doorbell..."></textarea>
+                        </div>
+
+                        <div class="checkbox" style="margin-bottom:20px; border:1px solid var(--border-subtle); padding:10px; border-radius:var(--radius-sm); background:#faf8f5;">
+                            <label style="font-weight:600; color:var(--primary-color);">
+                                <input type="checkbox" id="anonymousDelivery"> 
+                                <i class="fa fa-user-secret" style="margin-right:6px;"></i> Anonymous Delivery Mode 
+                                <br><small style="font-weight:normal; color:var(--text-muted); margin-left:24px; display:inline-block;">We will not reveal your name or contact details to the recipient.</small>
+                            </label>
+                        </div>
+
+                        <!-- Order Summary Box -->
+                        <div class="order-summary-box" style="margin-top:20px; margin-bottom:20px;">
+                            <div class="summary-row">
+                                <span>Subtotal:</span>
+                                <span>₹<span id="subtotalDisplay">0.00</span></span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Standard Refrigerated Delivery:</span>
+                                <span id="shippingDisplay">₹0.00</span>
+                            </div>
+                            <div class="summary-row summary-total">
+                                <span>Total:</span>
+                                <span>₹<span id="totalDisplay">0.00</span></span>
+                            </div>
+                            <small id="freeShippingNotice" style="color:#2e7d58; font-weight:600; display:block; margin-top:6px;">
+                                <i class="fa fa-check-circle"></i> Qualified for Free Standard Delivery!
+                            </small>
+                        </div>
+
+                        <button type="submit" id="placeOrderBtn" class="btn btn-block btn-lg btn-primary-gradient">
+                            <i class="fa fa-lock"></i> Place Order Now
+                        </button>
+                        <a href="special.html" class="btn btn-block btn-link" style="margin-top:8px; color:var(--text-muted);">
+                            <i class="fa fa-arrow-left"></i> Continue Shopping
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Order Confirmation View (Hidden Initially) -->
+        <div id="orderSuccessCard" style="display:none; max-width:650px; margin:40px auto; text-align:center; background:#ffffff; border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:45px 30px; box-shadow:var(--shadow-md);">
+            <div style="width:72px; height:72px; line-height:72px; border-radius:50%; background:var(--botanical-soft); color:#1b382b; font-size:36px; margin:0 auto 20px auto;">
+                <span class="glyphicon glyphicon-ok"></span>
+            </div>
+            <h2 style="font-size:32px; margin-bottom:12px;">Thank You For Your Order!</h2>
+            <p style="font-size:16px; color:var(--text-muted); margin-bottom:24px;">
+                Your floral arrangement has been scheduled for preparation. We've emailed your receipt and delivery tracking details.
+            </p>
+            <div style="background:#faf8f5; border:1px solid var(--border-subtle); border-radius:var(--radius-sm); padding:16px; margin-bottom:16px;">
+                <div style="font-size:14px; color:var(--text-muted);">Order Tracking Reference:</div>
+                <div id="confirmedOrderId" style="font-size:24px; font-weight:700; color:var(--primary-color); font-family:monospace; margin-top:4px;">#HP-100234</div>
+            </div>
+            <div style="background:#f4fbf7; border:1px solid #cce5d6; border-radius:var(--radius-sm); padding:16px; margin-bottom:28px;">
+                <div style="font-size:14px; color:#2e7d58; font-weight:600;"><i class="fa fa-clock-o"></i> Estimated Delivery In:</div>
+                <div id="etaDisplay" style="font-size:20px; font-weight:700; color:#1b382b; margin-top:4px;">45 minutes</div>
+            </div>
+            <div style="display:flex; justify-content:center; gap:16px;">
+                <button type="button" id="downloadInvoiceBtn" class="btn btn-default" style="border-radius:30px; padding:12px 24px; font-weight:600; color:var(--primary-color); border-color:var(--primary-color);">
+                    <i class="fa fa-file-pdf-o"></i> Download Invoice
+                </button>
+                <a href="index.html" class="btn btn-primary-gradient">Return to Home</a>
+            </div>
+        </div>
+
+        <!-- Hidden Invoice Template -->
+        <div id="invoiceTemplate" style="display:none; padding:40px; font-family:Arial, sans-serif; color:#333; width:100%; max-width:800px; margin:0 auto;">
+            <div style="text-align:center; margin-bottom:30px;">
+                <h1 style="color:#2e7d58; margin:0;"><i class="fa fa-envira"></i> Happy Petals Boutique</h1>
+                <p style="margin:5px 0;">1234 Flowers Avenue, Suite 100, San Jose, CA 95123</p>
+                <h2 style="margin-top:20px; text-transform:uppercase; letter-spacing:2px; color:#555;">Official Invoice</h2>
+            </div>
+            
+            <div style="display:flex; justify-content:space-between; margin-bottom:30px; border-bottom:2px solid #eee; padding-bottom:20px;">
+                <div>
+                    <strong>Billed To:</strong><br>
+                    <span id="invCustomerName"></span><br>
+                    <span id="invCustomerAddress"></span><br>
+                    <span id="invCustomerCityZip"></span><br>
+                    <span id="invCustomerPhone"></span>
+                </div>
+                <div style="text-align:right;">
+                    <strong>Order ID:</strong> <span id="invOrderId"></span><br>
+                    <strong>Date:</strong> <span id="invOrderDate"></span><br>
+                    <strong>Delivery:</strong> <span id="invDeliveryDate"></span> <span id="invDeliveryTime"></span>
+                </div>
+            </div>
+
+            <table style="width:100%; border-collapse:collapse; margin-bottom:30px;">
+                <thead>
+                    <tr style="background-color:#2e7d58; color:white;">
+                        <th style="padding:10px; text-align:left;">Item Description</th>
+                        <th style="padding:10px; text-align:center;">Qty</th>
+                        <th style="padding:10px; text-align:right;">Unit Price</th>
+                        <th style="padding:10px; text-align:right;">Total</th>
+                    </tr>
+                </thead>
+                <tbody id="invItemsBody">
+                </tbody>
+            </table>
+
+            <div style="display:flex; justify-content:flex-end;">
+                <div style="width:300px;">
+                    <div style="display:flex; justify-content:space-between; padding:5px 0;">
+                        <span>Subtotal:</span>
+                        <span>₹<span id="invSubtotal">0.00</span></span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; padding:5px 0;">
+                        <span>Shipping:</span>
+                        <span>₹<span id="invShipping">0.00</span></span>
+                    </div>
+                    <div style="display:flex; justify-content:space-between; padding:10px 0; border-top:2px solid #333; font-weight:bold; font-size:18px;">
+                        <span>Grand Total:</span>
+                        <span>₹<span id="invTotal">0.00</span></span>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top:40px; text-align:center; font-size:12px; color:#777;">
+                Thank you for your business!<br>
+                For any inquiries, contact hello@happypetals.com or call 800-123-1234
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container clearfix">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 footer-column">
+                        <h3>Floral Collections</h3>
+                        <a href="special.html">Today's Specials</a>
+                        <a href="special.html?occasion=anniversary">Anniversary Flowers</a>
+                        <a href="special.html?occasion=birthday">Birthday Celebrations</a>
+                        <a href="special.html?occasion=romance">Love & Romance</a>
+                        <a href="special.html?cat=plants">Potted Botanical Plants</a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 footer-column">
+                        <h3>Customer Care</h3>
+                        <a href="delivery.html">Shipping & Delivery Info</a>
+                        <a href="testimonials.html">Verified Customer Reviews</a>
+                        <a href="checkout.html">Shopping Basket & Orders</a>
+                        <a href="contact.html">Track My Order</a>
+                        <a href="contact.html">Frequently Asked Questions</a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 footer-column">
+                        <h3>Our Boutique</h3>
+                        <a href="contact.html">About Happy Petals</a>
+                        <a href="contact.html">Visit Our Store</a>
+                        <a href="registration.html">Create Member Account</a>
+                        <a href="login.html">Member Sign In</a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <h3>Flagship Store</h3>
+                        <address>
+                            <strong>Happy Petals Boutique</strong><br>
+                            1234 Flowers Avenue, Suite 100<br>
+                            San Jose, California 95123<br>
+                            <p class="text-primary"><i class="fa fa-phone"></i> Call 800-123-1234</p>
+                            <p style="margin:0; font-size:13px; color:#cad6d0;"><i class="fa fa-envelope"></i> hello@happypetals.com</p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Happy Petals Boutique. All rights reserved. Crafted with care for flower lovers worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/shop.js"></script>
+
+    <script>
+    (function(){
+        const cartTableBody = document.getElementById('cartTableBody');
+        const cartTableWrapper = document.getElementById('cartTableWrapper');
+        const cartEmptyMessage = document.getElementById('cartEmptyMessage');
+        const cartCountHeader = document.getElementById('cartCountHeader');
+        const subtotalDisplay = document.getElementById('subtotalDisplay');
+        const shippingDisplay = document.getElementById('shippingDisplay');
+        const totalDisplay = document.getElementById('totalDisplay');
+        const freeShippingNotice = document.getElementById('freeShippingNotice');
+        const checkoutForm = document.getElementById('checkoutForm');
+        const placeOrderBtn = document.getElementById('placeOrderBtn');
+
+        // Toggle custom add section
+        const toggleManualAddBtn = document.getElementById('toggleManualAddBtn');
+        const manualAddSection = document.getElementById('manualAddSection');
+        if (toggleManualAddBtn) {
+            toggleManualAddBtn.addEventListener('click', () => {
+                manualAddSection.style.display = manualAddSection.style.display === 'none' ? 'block' : 'none';
+            });
+        }
+
+        // Add manual item
+        const addItemBtn = document.getElementById('addItemBtn');
+        if (addItemBtn) {
+            addItemBtn.addEventListener('click', () => {
+                const name = (document.getElementById('itemName').value || '').trim();
+                const price = Number(document.getElementById('itemPrice').value) || 0;
+                const qty = Number(document.getElementById('itemQty').value) || 1;
+                if (!name) { alert('Please enter item name'); return; }
+                FlowerShop.addToCart({ id: 'custom_' + Date.now(), name, price, qty, img: 'images/featured1.png' });
+                document.getElementById('itemName').value = '';
+                renderCheckoutCart();
+            });
+        }
+
+        // Render Checkout Cart Table
+        function renderCheckoutCart() {
+            const items = FlowerShop.getCart();
+            cartTableBody.innerHTML = '';
+            cartCountHeader.textContent = FlowerShop.getCartCount();
+
+            if (items.length === 0) {
+                cartTableWrapper.style.display = 'none';
+                cartEmptyMessage.style.display = 'block';
+                subtotalDisplay.textContent = '0.00';
+                shippingDisplay.textContent = '₹0.00';
+                totalDisplay.textContent = '0.00';
+                freeShippingNotice.style.display = 'none';
+                if (placeOrderBtn) placeOrderBtn.disabled = true;
+                return;
+            }
+
+            cartTableWrapper.style.display = 'block';
+            cartEmptyMessage.style.display = 'none';
+            if (placeOrderBtn) placeOrderBtn.disabled = false;
+
+            let subtotal = 0;
+            items.forEach(item => {
+                const lineTotal = item.price * item.qty;
+                subtotal += lineTotal;
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>
+                        <div style="display:flex; align-items:center; gap:12px;">
+                            <img src="${item.img || 'images/featured1.png'}" style="width:48px; height:48px; object-fit:contain; background:#faf8f5; border-radius:6px; border:1px solid #ede8e3;">
+                            <div>
+                                <strong>₹{item.name}</strong>
+                            </div>
+                        </div>
+                    </td>
+                    <td>₹${Number(item.price).toFixed(2)}</td>
+                    <td>
+                        <div class="qty-control">
+                            <button type="button" class="qty-btn btn-minus" data-id="${item.id}">-</button>
+                            <span class="qty-val">₹{item.qty}</span>
+                            <button type="button" class="qty-btn btn-plus" data-id="${item.id}">+</button>
+                        </div>
+                    </td>
+                    <td><strong>₹${lineTotal.toFixed(2)}</strong></td>
+                    <td>
+                        <button type="button" class="btn btn-link btn-xs btn-remove" data-id="${item.id}" style="color:#e8647c;" title="Remove">
+                            <i class="fa fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                cartTableBody.appendChild(tr);
+            });
+
+            // Calculate Shipping: Free for orders >= ₹4800, else ₹800.00
+            const shipping = subtotal >= 4800 ? 0 : 800.00;
+            const grandTotal = subtotal + shipping;
+
+            subtotalDisplay.textContent = subtotal.toFixed(2);
+            shippingDisplay.textContent = shipping === 0 ? 'FREE' : `₹${shipping.toFixed(2)}`;
+            totalDisplay.textContent = grandTotal.toFixed(2);
+
+            if (shipping === 0) {
+                freeShippingNotice.style.display = 'block';
+            } else {
+                freeShippingNotice.style.display = 'none';
+            }
+
+            // Bind Stepper and Remove buttons
+            cartTableBody.querySelectorAll('.btn-minus').forEach(b => {
+                b.addEventListener('click', () => {
+                    FlowerShop.updateQty(b.getAttribute('data-id'), -1);
+                    renderCheckoutCart();
+                });
+            });
+
+            cartTableBody.querySelectorAll('.btn-plus').forEach(b => {
+                b.addEventListener('click', () => {
+                    FlowerShop.updateQty(b.getAttribute('data-id'), 1);
+                    renderCheckoutCart();
+                });
+            });
+
+            cartTableBody.querySelectorAll('.btn-remove').forEach(b => {
+                b.addEventListener('click', () => {
+                    FlowerShop.removeFromCart(b.getAttribute('data-id'));
+                    renderCheckoutCart();
+                });
+            });
+        }
+
+        // Prefill user data if logged in
+        try {
+            const curUser = JSON.parse(localStorage.getItem('hp_user'));
+            if (curUser) {
+                if (curUser.name) document.getElementById('customerName').value = curUser.name;
+                if (curUser.email) document.getElementById('customerEmail').value = curUser.email;
+            }
+        } catch(e){}
+
+        // Initial render
+        renderCheckoutCart();
+
+        // Handle Place Order
+        if (checkoutForm) {
+            checkoutForm.addEventListener('submit', async function(e){
+                e.preventDefault();
+                const items = FlowerShop.getCart();
+                if (items.length === 0) {
+                    alert('Your cart is empty! Please select flowers first.');
+                    return;
+                }
+
+                const subtotal = FlowerShop.getCartTotal();
+                const shipping = subtotal >= 4800 ? 0 : 800.00;
+                const total = subtotal + shipping;
+
+                const customer = {
+                    name: document.getElementById('customerName').value.trim(),
+                    email: document.getElementById('customerEmail').value.trim(),
+                    phone: document.getElementById('customerPhone').value.trim(),
+                    address: document.getElementById('customerAddress').value.trim(),
+                    city: document.getElementById('customerCity').value.trim(),
+                    zip: document.getElementById('customerZip').value.trim(),
+                    preferredDate: document.getElementById('deliveryDate').value || 'Immediate Dispatch',
+                    preferredTime: document.getElementById('deliveryTime').value || 'Anytime',
+                    instructions: document.getElementById('deliveryInstructions').value.trim(),
+                    anonymousDelivery: document.getElementById('anonymousDelivery').checked
+                };
+
+                placeOrderBtn.disabled = true;
+                placeOrderBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Processing Order...';
+
+                try {
+                    const res = await fetch('http://localhost:3000/api/checkout', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ items, total, customer })
+                    });
+                    const data = await res.json();
+
+                    if (res.ok && data && data.success) {
+                        const orderId = data.orderId || ('HP-' + Math.floor(100000 + Math.random() * 900000));
+                        document.getElementById('confirmedOrderId').textContent = '#' + orderId;
+                        document.getElementById('checkoutMainRow').style.display = 'none';
+                        document.getElementById('orderSuccessCard').style.display = 'block';
+
+                        // Calculate and display ETA
+                        let etaText = '45 minutes'; // Default for immediate dispatch
+                        if (customer.preferredDate && customer.preferredDate !== 'Immediate Dispatch') {
+                            const now = new Date();
+                            // Parse preferredDate (YYYY-MM-DD) and time (HH:mm)
+                            let timeStr = customer.preferredTime !== 'Anytime' ? customer.preferredTime : '12:00';
+                            const deliveryDate = new Date(`${customer.preferredDate}T${timeStr}:00`);
+                            
+                            const diffMs = deliveryDate - now;
+                            if (diffMs > 0) {
+                                const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                                const diffHrs = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                const diffMins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+                                
+                                if (diffDays > 0) {
+                                    etaText = `${diffDays} day(s) and ${diffHrs} hour(s)`;
+                                } else if (diffHrs > 0) {
+                                    etaText = `${diffHrs} hour(s) and ${diffMins} minute(s)`;
+                                } else {
+                                    etaText = `${diffMins} minute(s)`;
+                                }
+                            }
+                        }
+                        document.getElementById('etaDisplay').textContent = etaText;
+
+                        // Populate Invoice
+                        document.getElementById('invCustomerName').textContent = customer.name;
+                        document.getElementById('invCustomerAddress').textContent = customer.address;
+                        document.getElementById('invCustomerCityZip').textContent = customer.city + ' ' + customer.zip;
+                        document.getElementById('invCustomerPhone').textContent = customer.phone || customer.email;
+                        document.getElementById('invOrderId').textContent = orderId;
+                        document.getElementById('invOrderDate').textContent = new Date().toLocaleDateString();
+                        document.getElementById('invDeliveryDate').textContent = customer.preferredDate;
+                        document.getElementById('invDeliveryTime').textContent = customer.preferredTime !== 'Anytime' ? 'at ' + customer.preferredTime : '';
+                        
+                        const invItemsBody = document.getElementById('invItemsBody');
+                        invItemsBody.innerHTML = '';
+                        items.forEach(it => {
+                            const tr = document.createElement('tr');
+                            tr.style.borderBottom = '1px solid #ddd';
+                            tr.innerHTML = `
+                                <td style="padding:10px;">${it.name}</td>
+                                <td style="padding:10px; text-align:center;">${it.qty}</td>
+                                <td style="padding:10px; text-align:right;">₹${Number(it.price).toFixed(2)}</td>
+                                <td style="padding:10px; text-align:right;">₹${(it.price * it.qty).toFixed(2)}</td>
+                            `;
+                            invItemsBody.appendChild(tr);
+                        });
+                        document.getElementById('invSubtotal').textContent = subtotal.toFixed(2);
+                        document.getElementById('invShipping').textContent = shipping.toFixed(2);
+                        document.getElementById('invTotal').textContent = total.toFixed(2);
+
+                        // Hook up PDF Download Button
+                        document.getElementById('downloadInvoiceBtn').addEventListener('click', () => {
+                            const invElement = document.getElementById('invoiceTemplate');
+                            invElement.style.display = 'block';
+                            html2pdf().from(invElement).set({
+                                margin: 10,
+                                filename: 'HappyPetals_Invoice_' + orderId + '.pdf',
+                                html2canvas: { scale: 2 },
+                                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                            }).save().then(() => {
+                                invElement.style.display = 'none';
+                            });
+                        });
+
+                        FlowerShop.clearCart();
+                        window.scrollTo({ top: 100, behavior: 'smooth' });
+                    } else {
+                        alert('Order submission error: ' + (data.message || 'Please try again'));
+                        placeOrderBtn.disabled = false;
+                        placeOrderBtn.innerHTML = '<i class="fa fa-lock"></i> Place Order Now';
+                    }
+                } catch(err) {
+                    console.error(err);
+                    alert('Network error while processing order. Please verify connection.');
+                    placeOrderBtn.disabled = false;
+                    placeOrderBtn.innerHTML = '<i class="fa fa-lock"></i> Place Order Now';
+                }
+            });
+        }
+    })();
+    </script>
+</body>
+</html>

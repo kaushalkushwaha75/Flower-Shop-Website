@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Smoke Tester",
+    "email": "smoke+reg@example.com",
+    "password": "***",
+    "createdAt": "2025-12-01T06:09:55.986Z"
+  },
+  {
+    "name": "Hash Test",
+    "email": "hash+test@example.com",
+    "password": "***",
+    "createdAt": "2025-12-01T06:15:27.576Z"
+  },
+  {
+    "name": "Smoke Tester",
+    "email": "smoke+reg@example.com",
+    "password": "$2b$10$5uWsBoS4sDTvQt/fPawiEu4hCPqqJ5ZMcFihZZPx2ny1W5fbcPNTG",
+    "createdAt": "2026-09-17T10:11:57.050Z"
+  },
+  {
+    "name": "Alice Smith",
+    "email": "alice@example.com",
+    "password": "$2b$10$mK/siYaK8Tkl6lcjNgcN9.W0FveEB/gtT/F5I9ytFs.9PeaTq1Lea",
+    "createdAt": "2026-09-17T10:12:23.580Z"
+  }
+]

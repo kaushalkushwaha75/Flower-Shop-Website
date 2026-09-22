@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Happy Petals - Today's Specials & Curated Floral Catalog">
+    <title>Today's Specials & Catalog | Happy Petals Boutique</title>
+
+    <!-- Bootstrap 3.3.7 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link href="css/flowershop.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Top Utility Navigation Header -->
+    <div class="top-header-bar">
+        <div class="container">
+            <div class="top-menu-row">
+                <div class="top-menu-links">
+                    <span><i class="fa fa-phone" style="color:var(--primary-color)"></i> Hotline: <strong>800-123-1234</strong></span>
+                    <a href="delivery.html"><i class="fa fa-truck"></i> Free Same-Day Delivery on ₹4800+</a>
+                    <a href="testimonials.html"><i class="fa fa-star" style="color:#f1b44c"></i> 4.9/5 Customer Reviews</a>
+                </div>
+
+                <div style="display:flex; align-items:center; gap:16px;">
+                    <div class="top-auth-container" style="display:inline-flex; align-items:center; gap:10px;">
+                        <a href="registration.html"><i class="fa fa-user-plus"></i> Register</a>
+                        <span style="color:#d5d0cb">|</span>
+                        <a href="login.html"><i class="fa fa-sign-in"></i> Sign In</a>
+                    </div>
+
+                    <form class="form-search-header" role="search">
+                        <input type="text" id="exampleInputsearch" placeholder="Search catalog..." aria-label="Search">
+                        <button type="submit" id="exampleInputgo" aria-label="Submit Search">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+
+                    <a href="checkout.html" class="cart-header-btn" title="View Cart">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        <span>Cart</span>
+                        <span class="cart-badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <i class="fa fa-envira" style="color:var(--primary-color)"></i> Happy Petals <span class="navbar-brand-petal">Boutique</span>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <li class="dropdown current-page-item">
+                        <a href="special.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Catalog <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-custom">
+                            <li><a href="special.html"><i class="fa fa-magic"></i> Today's Specials</a></li>
+                            <li><a href="special.html?cat=roses"><i class="fa fa-heart"></i> Luxury Roses</a></li>
+                            <li><a href="special.html?cat=bouquets"><i class="fa fa-gift"></i> Hand-tied Bouquets</a></li>
+                            <li><a href="special.html?cat=plants"><i class="fa fa-leaf"></i> Plants & Succulents</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="special.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Occasions <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-custom">
+                            <li><a href="special.html?occasion=anniversary">Anniversary</a></li>
+                            <li><a href="special.html?occasion=birthday">Birthday Celebrations</a></li>
+                            <li><a href="special.html?occasion=romance">Love & Romance</a></li>
+                            <li><a href="special.html?occasion=congratulations">Congratulations</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="testimonials.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="checkout.html" style="color:var(--primary-color) !important; font-weight:700;"><i class="fa fa-shopping-bag"></i> Checkout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sub-Navigation / Breadcrumb -->
+    <main class="container">
+        <div class="sub-nav">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+                <div>
+                    <h3><a href="special.html">Today's Specials</a></h3>
+                    <ol class="breadcrumb breadcrumb-custom">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="special.html">Catalog</a></li>
+                        <li class="active current-item">Today's Special Offers</li>
+                    </ol>
+                </div>
+                <div style="font-size:14px; color:var(--text-muted);">
+                    <i class="fa fa-clock-o"></i> Offers refreshed daily at 6:00 AM
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Pills -->
+        <div style="display:flex; gap:10px; margin-bottom:30px; flex-wrap:wrap;">
+            <button class="btn btn-default filter-pill active" data-filter="all" style="border-radius:20px; font-weight:600;">All Specials</button>
+            <button class="btn btn-default filter-pill" data-filter="roses" style="border-radius:20px; font-weight:600;">Romantic Roses</button>
+            <button class="btn btn-default filter-pill" data-filter="spring" style="border-radius:20px; font-weight:600;">Spring Harvest</button>
+            <button class="btn btn-default filter-pill" data-filter="lilies" style="border-radius:20px; font-weight:600;">Vase Arrangements</button>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="featured-products" style="margin-top:10px;">
+            <div class="row">
+                <!-- Item 1: Colourful Spring -->
+                <div class="col-md-6 col-sm-6 catalog-item" data-category="spring">
+                    <div class="featured-detail">
+                        <span class="product-badge">20% Off</span>
+                        <div class="product-img-wrapper">
+                            <img src="images/fea4.png" alt="Colourful Spring">
+                        </div>
+                        <h3>Colourful Spring</h3>
+                        <p>An invigorating explosion of seasonal pink carnations, baby freesia, and radiant chrysanthemums.</p>
+                        <div class="product-card-footer">
+                            <div class="price-tag">₹4000.00 <small>₹5200.00</small></div>
+                            <button class="btn btn-add-cart" data-id="spec_1" data-name="Colourful Spring" data-price="4000" data-img="images/fea4.png">
+                                <i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Bouquet of Love (Fixed missing image with red-roses.png) -->
+                <div class="col-md-6 col-sm-6 catalog-item" data-category="roses">
+                    <div class="featured-detail">
+                        <span class="product-badge">Top Seller</span>
+                        <div class="product-img-wrapper">
+                            <img src="images/red-roses.png" alt="Bouquet of Love">
+                        </div>
+                        <h3>Bouquet of Love</h3>
+                        <p>Two dozen velvety red Ecuador roses with gypsophila and satin ribbon for memorable anniversaries.</p>
+                        <div class="product-card-footer">
+                            <div class="price-tag">₹6400.00 <small>₹8000.00</small></div>
+                            <button class="btn btn-add-cart" data-id="spec_2" data-name="Bouquet of Love" data-price="6400" data-img="images/red-roses.png">
+                                <i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: First Impressions (Fixed missing image with roses-lillies.jpg) -->
+                <div class="col-md-6 col-sm-6 catalog-item" data-category="lilies">
+                    <div class="featured-detail">
+                        <span class="product-badge">Includes Vase</span>
+                        <div class="product-img-wrapper">
+                            <img src="images/roses-lillies.jpg" alt="First Impressions">
+                        </div>
+                        <h3>First Impressions</h3>
+                        <p>Fragrant Stargazer lilies and tender pink garden roses presented in an artisanal clear glass vase.</p>
+                        <div class="product-card-footer">
+                            <div class="price-tag">₹4800.00 <small>₹6000.00</small></div>
+                            <button class="btn btn-add-cart" data-id="spec_3" data-name="First Impressions" data-price="4800" data-img="images/roses-lillies.jpg">
+                                <i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Summer Splendor -->
+                <div class="col-md-6 col-sm-6 catalog-item" data-category="spring">
+                    <div class="featured-detail">
+                        <span class="product-badge">Seasonal Special</span>
+                        <div class="product-img-wrapper">
+                            <img src="images/fea5.png" alt="Summer Splendor">
+                        </div>
+                        <h3>Summer Splendor</h3>
+                        <p>Sunny yellow gerberas, sky blue hydrangeas, and lush greenery for warm congratulations.</p>
+                        <div class="product-card-footer">
+                            <div class="price-tag">₹6000.00 <small>₹7200.00</small></div>
+                            <button class="btn btn-add-cart" data-id="spec_4" data-name="Summer Splendor" data-price="6000" data-img="images/fea5.png">
+                                <i class="fa fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container clearfix">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 footer-column">
+                        <h3>Floral Collections</h3>
+                        <a href="special.html">Today's Specials</a>
+                        <a href="special.html?occasion=anniversary">Anniversary Flowers</a>
+                        <a href="special.html?occasion=birthday">Birthday Celebrations</a>
+                        <a href="special.html?occasion=romance">Love & Romance</a>
+                        <a href="special.html?cat=plants">Potted Botanical Plants</a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 footer-column">
+                        <h3>Customer Care</h3>
+                        <a href="delivery.html">Shipping & Delivery Info</a>
+                        <a href="testimonials.html">Verified Customer Reviews</a>
+                        <a href="checkout.html">Shopping Basket & Orders</a>
+                        <a href="contact.html">Track My Order</a>
+                        <a href="contact.html">Frequently Asked Questions</a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 footer-column">
+                        <h3>Our Boutique</h3>
+                        <a href="contact.html">About Happy Petals</a>
+                        <a href="contact.html">Visit Our Store</a>
+                        <a href="registration.html">Create Member Account</a>
+                        <a href="login.html">Member Sign In</a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <h3>Flagship Store</h3>
+                        <address>
+                            <strong>Happy Petals Boutique</strong><br>
+                            1234 Flowers Avenue, Suite 100<br>
+                            San Jose, California 95123<br>
+                            <p class="text-primary"><i class="fa fa-phone"></i> Call 800-123-1234</p>
+                            <p style="margin:0; font-size:13px; color:#cad6d0;"><i class="fa fa-envelope"></i> hello@happypetals.com</p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Happy Petals Boutique. All rights reserved. Crafted with care for flower lovers worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/shop.js"></script>
+    <script>
+        // Interactive category pill filtering
+        document.querySelectorAll('.filter-pill').forEach(btn => {
+            btn.addEventListener('click', function(){
+                document.querySelectorAll('.filter-pill').forEach(b => {
+                    b.classList.remove('active', 'btn-primary-gradient');
+                    b.classList.add('btn-default');
+                });
+                this.classList.add('active', 'btn-primary-gradient');
+                this.classList.remove('btn-default');
+
+                const cat = this.getAttribute('data-filter');
+                document.querySelectorAll('.catalog-item').forEach(item => {
+                    if (cat === 'all' || item.getAttribute('data-category') === cat) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

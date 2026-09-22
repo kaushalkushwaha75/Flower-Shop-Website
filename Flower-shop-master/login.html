@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Happy Petals - Member Sign In">
+    <title>Member Sign In | Happy Petals Boutique</title>
+
+    <!-- Bootstrap 3.3.7 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link href="css/flowershop.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Top Utility Header -->
+    <div class="top-header-bar">
+        <div class="container">
+            <div class="top-menu-row">
+                <div class="top-menu-links">
+                    <span><i class="fa fa-phone" style="color:var(--primary-color)"></i> Hotline: <strong>800-123-1234</strong></span>
+                    <a href="delivery.html"><i class="fa fa-truck"></i> Free Same-Day Delivery on ₹4800+</a>
+                    <a href="testimonials.html"><i class="fa fa-star" style="color:#f1b44c"></i> 4.9/5 Customer Reviews</a>
+                </div>
+
+                <div style="display:flex; align-items:center; gap:16px;">
+                    <div class="top-auth-container" style="display:inline-flex; align-items:center; gap:10px;">
+                        <a href="registration.html"><i class="fa fa-user-plus"></i> Register</a>
+                        <span style="color:#d5d0cb">|</span>
+                        <a href="login.html"><i class="fa fa-sign-in"></i> Sign In</a>
+                    </div>
+
+                    <form class="form-search-header" role="search">
+                        <input type="text" id="exampleInputsearch" placeholder="Search..." aria-label="Search">
+                        <button type="submit" id="exampleInputgo" aria-label="Submit Search">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+
+                    <a href="checkout.html" class="cart-header-btn" title="View Cart">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>
+                        <span>Cart</span>
+                        <span class="cart-badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav id="mainNav" class="navbar navbar-default navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <i class="fa fa-envira" style="color:var(--primary-color)"></i> Happy Petals <span class="navbar-brand-petal">Boutique</span>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="special.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Catalog <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-custom">
+                            <li><a href="special.html"><i class="fa fa-magic"></i> Today's Specials</a></li>
+                            <li><a href="special.html?cat=roses"><i class="fa fa-heart"></i> Luxury Roses</a></li>
+                            <li><a href="special.html?cat=bouquets"><i class="fa fa-gift"></i> Hand-tied Bouquets</a></li>
+                            <li><a href="special.html?cat=plants"><i class="fa fa-leaf"></i> Plants & Succulents</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="special.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Occasions <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-custom">
+                            <li><a href="special.html?occasion=anniversary">Anniversary</a></li>
+                            <li><a href="special.html?occasion=birthday">Birthday Celebrations</a></li>
+                            <li><a href="special.html?occasion=romance">Love & Romance</a></li>
+                            <li><a href="special.html?occasion=congratulations">Congratulations</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="delivery.html">Delivery</a></li>
+                    <li><a href="testimonials.html">Reviews</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="checkout.html" style="color:var(--primary-color) !important; font-weight:700;"><i class="fa fa-shopping-bag"></i> Checkout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Sign In Section -->
+    <main class="container">
+        <div class="auth-wrapper">
+            <div class="auth-card-container">
+                <!-- Left Visual Image Banner -->
+                <div class="auth-sidebar-img">
+                    <img src="images/flower-vase1.png" alt="Happy Petals Floral Vase">
+                </div>
+
+                <!-- Right Form Content -->
+                <div class="auth-form-content">
+                    <h2 style="font-size:32px; margin-top:0; margin-bottom:8px;">Welcome Back</h2>
+                    <p style="color:var(--text-muted); margin-bottom:24px;">
+                        Sign in to access your saved delivery addresses, member discounts, and order history.
+                    </p>
+
+                    <form id="loginForm" class="form-reg">
+                        <div class="form-group">
+                            <label for="loginEmail">Email Address</label>
+                            <input id="loginEmail" type="email" class="form-control" placeholder="you@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input id="loginPassword" type="password" class="form-control" placeholder="Enter your password" required>
+                        </div>
+
+                        <div id="loginAlertBox" style="display:none; margin-bottom:15px;" class="alert"></div>
+
+                        <button type="submit" id="loginSubmitBtn" class="btn btn-block btn-lg btn-primary-gradient">
+                            Sign In to Account
+                        </button>
+
+                        <hr style="margin:22px 0 18px 0;">
+
+                        <div style="text-align:center; font-size:14px;">
+                            New to Happy Petals? <a href="registration.html" style="color:var(--primary-color); font-weight:700;">Create an account</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container clearfix">
+            <div class="footer-top">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 footer-column">
+                        <h3>Floral Collections</h3>
+                        <a href="special.html">Today's Specials</a>
+                        <a href="special.html?occasion=anniversary">Anniversary Flowers</a>
+                        <a href="special.html?occasion=birthday">Birthday Celebrations</a>
+                        <a href="special.html?occasion=romance">Love & Romance</a>
+                        <a href="special.html?cat=plants">Potted Botanical Plants</a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 footer-column">
+                        <h3>Customer Care</h3>
+                        <a href="delivery.html">Shipping & Delivery Info</a>
+                        <a href="testimonials.html">Verified Customer Reviews</a>
+                        <a href="checkout.html">Shopping Basket & Orders</a>
+                        <a href="contact.html">Track My Order</a>
+                        <a href="contact.html">Frequently Asked Questions</a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6 footer-column">
+                        <h3>Our Boutique</h3>
+                        <a href="contact.html">About Happy Petals</a>
+                        <a href="contact.html">Visit Our Store</a>
+                        <a href="registration.html">Create Member Account</a>
+                        <a href="login.html">Member Sign In</a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <h3>Flagship Store</h3>
+                        <address>
+                            <strong>Happy Petals Boutique</strong><br>
+                            1234 Flowers Avenue, Suite 100<br>
+                            San Jose, California 95123<br>
+                            <p class="text-primary"><i class="fa fa-phone"></i> Call 800-123-1234</p>
+                            <p style="margin:0; font-size:13px; color:#cad6d0;"><i class="fa fa-envelope"></i> hello@happypetals.com</p>
+                        </address>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Happy Petals Boutique. All rights reserved. Crafted with care for flower lovers worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/shop.js"></script>
+
+    <script>
+    (function(){
+        const form = document.getElementById('loginForm');
+        const alertBox = document.getElementById('loginAlertBox');
+        const submitBtn = document.getElementById('loginSubmitBtn');
+        if (!form) return;
+
+        form.addEventListener('submit', async function(e){
+            e.preventDefault();
+            alertBox.style.display = 'none';
+
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Signing In...';
+
+            try {
+                const res = await fetch('http://localhost:3000/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                const j = await res.json();
+                if (res.ok && j && j.success) {
+                    localStorage.setItem('hp_user', JSON.stringify({ email }));
+                    alertBox.className = 'alert alert-success';
+                    alertBox.innerHTML = '<i class="fa fa-check-circle"></i> Signed in successfully! Welcome back.';
+                    alertBox.style.display = 'block';
+
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1000);
+                } else {
+                    alertBox.className = 'alert alert-danger';
+                    alertBox.textContent = j && j.message ? j.message : 'Invalid email or password. Please try again.';
+                    alertBox.style.display = 'block';
+                }
+            } catch (err) {
+                console.error(err);
+                alertBox.className = 'alert alert-danger';
+                alertBox.textContent = 'Network error while signing in.';
+                alertBox.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Sign In to Account';
+            }
+        });
+    })();
+    </script>
+</body>
+</html>
