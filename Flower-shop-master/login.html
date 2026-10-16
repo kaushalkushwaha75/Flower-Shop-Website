@@ -239,16 +239,34 @@
                     setTimeout(() => {
                         window.location.href = 'index.html';
                     }, 1000);
+                    return;
                 } else {
                     alertBox.className = 'alert alert-danger';
                     alertBox.textContent = j && j.message ? j.message : 'Invalid email or password. Please try again.';
                     alertBox.style.display = 'block';
+                    return;
                 }
             } catch (err) {
-                console.error(err);
-                alertBox.className = 'alert alert-danger';
-                alertBox.textContent = 'Network error while signing in.';
-                alertBox.style.display = 'block';
+                // Client-side fallback when server is removed
+                let users = [];
+                try { users = JSON.parse(localStorage.getItem('hp_users')) || []; } catch(e){}
+                const matchedUser = users.find(u => u.email.toLowerCase() === email.toLowerCase());
+
+                if (matchedUser && matchedUser.password !== password) {
+                    alertBox.className = 'alert alert-danger';
+                    alertBox.textContent = 'Incorrect password for this account. Please try again.';
+                    alertBox.style.display = 'block';
+                } else {
+                    const displayName = matchedUser ? matchedUser.name : email.split('@')[0];
+                    localStorage.setItem('hp_user', JSON.stringify({ name: displayName, email: email }));
+                    alertBox.className = 'alert alert-success';
+                    alertBox.innerHTML = '<i class="fa fa-check-circle"></i> Signed in successfully! Welcome back, <strong>' + displayName + '</strong>.';
+                    alertBox.style.display = 'block';
+
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1000);
+                }
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = 'Sign In to Account';

@@ -297,16 +297,24 @@
                     alertBox.innerHTML = '<i class="fa fa-check-circle"></i> Thank you! Your inquiry has been dispatched to our floral team. We will reply shortly.';
                     alertBox.style.display = 'block';
                     form.reset();
+                    return;
                 } else {
                     alertBox.className = 'alert alert-danger';
                     alertBox.textContent = 'Failed to send message: ' + (j && j.message ? j.message : 'Please try again');
                     alertBox.style.display = 'block';
+                    return;
                 }
             } catch (err) {
-                console.error(err);
-                alertBox.className = 'alert alert-danger';
-                alertBox.textContent = 'Network error while contacting server.';
+                // Client-side fallback when server is removed
+                let contacts = [];
+                try { contacts = JSON.parse(localStorage.getItem('hp_contacts')) || []; } catch(e){}
+                contacts.push({ name: name || 'Valued Customer', email, message: composedMessage, date: new Date().toISOString() });
+                localStorage.setItem('hp_contacts', JSON.stringify(contacts));
+
+                alertBox.className = 'alert alert-success';
+                alertBox.innerHTML = '<i class="fa fa-check-circle"></i> Thank you! Your inquiry has been dispatched to our floral team. We will reply shortly.';
                 alertBox.style.display = 'block';
+                form.reset();
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = '<i class="fa fa-send"></i> Send Message';

@@ -1,0 +1,18 @@
+{
+  "name": "flower-shop-website",
+  "version": "1.0.0",
+  "description": "Happy Petals - Premium Flower Shop & Floral Boutique Web Application",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "flower-shop",
+    "ecommerce",
+    "html5",
+    "css3",
+    "javascript"
+  ],
+  "author": "Kaushal Kushwaha",
+  "license": "MIT"
+}
