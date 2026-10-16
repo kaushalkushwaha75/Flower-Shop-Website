@@ -23,6 +23,8 @@ Flower-shop-master/
 ├── images/               # Product photography & floral assets
 ├── LICENSE               # License file
 ├── package.json          # Project metadata and quick start scripts
+├── requirements.txt      # Python dependencies (Flask, Gunicorn)
+├── app.py                # Python web server
 └── README.md             # Project documentation
 ```
 
@@ -45,15 +47,25 @@ Flower-shop-master/
 ### Method 1: Direct in Browser
 Simply open [`index.html`](index.html) in any modern web browser (Google Chrome, Microsoft Edge, Mozilla Firefox).
 
-### Method 2: Local Static Server (Node.js)
+### Method 2: Python Web Server
 ```bash
-npm start
+# Install dependencies
+pip install -r requirements.txt
+
+# Run server
+python app.py
 ```
-*Or with Python:*
+*Or standard Python built-in server:*
 ```bash
 python -m http.server 8000
 ```
-Then visit `http://localhost:8000` or `http://localhost:3000` in your browser.
+Then visit `http://localhost:5000` (or `http://localhost:8000`).
+
+### Method 3: Local Static Server (Node.js)
+```bash
+npm start
+```
+Then visit `http://localhost:3000` in your browser.
 
 ---
 

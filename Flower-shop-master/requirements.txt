@@ -1,0 +1,17 @@
+# ==============================================================================
+# 🌸 Happy Petals - Premium Flower Shop Web Application
+# Python Dependencies & Server Requirements
+# ==============================================================================
+
+# Web Framework & Core WSGI Components
+Flask>=3.0.0
+Werkzeug>=3.0.0
+
+# Production Application Server
+gunicorn>=21.2.0
+
+# Environment Configuration
+python-dotenv>=1.0.0
+
+# HTTP & API Utilities
+requests>=2.31.0
